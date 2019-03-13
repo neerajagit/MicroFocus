@@ -71,7 +71,7 @@ public class microFocus {
 				return true;
 			}
 		}
-
+		
 		int i = 0;
 		/*This loop is to compare the common prefix range*/
 		while (range > 0) {
@@ -101,11 +101,6 @@ public class microFocus {
 		int j = ipAdrrGiven.length - 1;
 		while (rangeChange > 0) {
 			if (rangeChange >= 8) {
-				/*if (!(Integer.parseInt(ipAdrrGiven[j]) >= Integer.parseInt(ipAdrrSplit[j])
-						&& Integer.parseInt(ipAdrrGiven[j]) < 256)) {
-					return false;
-				}*/
-				
 				if (!(Integer.parseInt(ipAdrrGiven[j]) >= 0
 						&& Integer.parseInt(ipAdrrGiven[j]) < 256)) {
 					return false;
@@ -115,11 +110,6 @@ public class microFocus {
 			} else {
 				int mask = (int) Math.pow(2, rangeChange) - 1;
 				int first = Integer.parseInt(ipAdrrGiven[j]) & mask;
-				int second = Integer.parseInt(ipAdrrSplit[j]) & mask;	
-				/*if (!(first >= second && first <= mask)) {
-					return false;
-				}*/
-				
 				if (!(first >= 0 && first <= mask)) {
 					return false;
 				}
